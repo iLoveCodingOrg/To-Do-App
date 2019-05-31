@@ -1,8 +1,10 @@
+const form = document.querySelector('form.add');
 const addButton = document.querySelector('#addbutton');
 const itemToAdd = document.querySelector('#itemToAdd');
 const ul = document.querySelector('.todo');
 
-addButton.addEventListener('click', function(){
+form.addEventListener('submit', function(event){
+    event.preventDefault();
     const newItem = createItem(itemToAdd.value);
     ul.appendChild(newItem);
     itemToAdd.value = '';
