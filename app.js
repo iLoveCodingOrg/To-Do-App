@@ -6,6 +6,7 @@ addButton.addEventListener('click', function(){
     const newItem = createItem(itemToAdd.value);
     ul.appendChild(newItem);
     itemToAdd.value = '';
+    itemToAdd.focus();
 });
 
 function createItem(val){
