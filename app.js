@@ -9,7 +9,20 @@ addButton.addEventListener('click', function(){
 
 function createItem(val){
     const item = document.createElement('li');
-    item.textContent = val;
+    const span = document.createElement('span');
+    const delBtn = document.createElement('button');
+
+    span.textContent = val;
+    delBtn.textContent = 'Delete';
+    delBtn.classList.add('btn-link');
+
+    item.appendChild(span);
+    item.appendChild(delBtn);
+
+    delBtn.addEventListener('click', function(){
+        item.parentNode.removeChild(item);
+      })
+    
 
     return item;
 }
